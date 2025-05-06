@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- META INFORMATION AND PAGE SETUP -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- EDIT TITLE TAG TO UPDATE BROWSER TAB DISPLAY -->
     <title>Projects & Experience | Harsh Mittal</title>
+    <!-- STYLESHEET AND FAVICON LINKS -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Star Wars starry background -->
+    <!-- STAR WARS STARRY BACKGROUND EFFECT - DON'T MODIFY -->
     <div class="stars"></div>
     
+    <!-- NAVIGATION SECTION - EDIT LINKS IF ADDING NEW PAGES -->
     <header>
         <button class="menu-toggle" aria-label="Toggle navigation menu">☰</button>
         <nav>
@@ -19,17 +23,22 @@
             <a href="about.html">About</a>
             <a href="projects.html" class="active">Projects</a>
             <a href="contact.html">Contact</a>
+            <!-- ADD NEW NAVIGATION LINKS HERE IF NEEDED -->
         </nav>
     </header>
 
     <main>
+        <!-- CAREER/EXPERIENCE SECTION WITH TIMELINE -->
         <section id="experience" class="fade-in">
+            <!-- SECTION TITLE - CUSTOMIZE THIS HEADING -->
             <div class="section-title-container">
                 <h2>Career Journey</h2>
                 <div class="lightsaber" style="width: 80px;"></div>
             </div>
             
+            <!-- EXPERIENCE TIMELINE - ADD/EDIT/REMOVE JOB ENTRIES AS NEEDED -->
             <div class="timeline">
+                <!-- CURRENT/MOST RECENT JOB - UPDATE WITH YOUR EXPERIENCE -->
                 <div class="timeline-item">
                     <p class="timeline-date">2023 - Present</p>
                     <h3 class="timeline-title">System Test and Integration Engineer</h3>
@@ -42,6 +51,7 @@
                     </ul>
                 </div>
                 
+                <!-- PREVIOUS JOB - UPDATE WITH YOUR EXPERIENCE -->
                 <div class="timeline-item">
                     <p class="timeline-date">2021 - 2023</p>
                     <h3 class="timeline-title">Test Engineer</h3>
@@ -54,6 +64,7 @@
                     </ul>
                 </div>
                 
+                <!-- OLDEST JOB - UPDATE WITH YOUR EXPERIENCE -->
                 <div class="timeline-item">
                     <p class="timeline-date">2019 - 2021</p>
                     <h3 class="timeline-title">QA Engineer Intern</h3>
@@ -65,83 +76,105 @@
                         <li>Participated in sprint planning and review meetings</li>
                     </ul>
                 </div>
+                
+                <!-- TO ADD MORE JOBS, COPY THE TIMELINE-ITEM DIV STRUCTURE ABOVE -->
             </div>
         </section>
 
+        <!-- PROJECTS SECTION -->
         <section id="projects" class="fade-in">
+            <!-- SECTION TITLE - CUSTOMIZE THIS HEADING -->
             <div class="section-title-container">
                 <h2>Notable Missions</h2>
                 <div class="lightsaber red" style="width: 80px;"></div>
             </div>
             
+            <!-- PROJECT GRID - ADD/EDIT/REMOVE PROJECT CARDS AS NEEDED -->
             <div class="project-grid">
+                <!-- PROJECT 1 - UPDATE WITH YOUR PROJECT DETAILS -->
                 <div class="project-card">
                     <div class="project-info">
                         <h3 class="project-title">Automated Test Framework for IoT Devices</h3>
                         <p>Designed and implemented an end-to-end automated test framework for IoT devices, enabling comprehensive testing of sensor data collection, wireless communication, and cloud integration.</p>
+                        <!-- UPDATE TECH TAGS WITH RELEVANT TECHNOLOGIES -->
                         <div class="project-tech">
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">MQTT</span>
                             <span class="tech-tag">Selenium</span>
                             <span class="tech-tag">Docker</span>
                         </div>
+                        <!-- UPDATE ACHIEVEMENT METRICS -->
                         <p class="project-achievements">Reduced testing time by 60% while increasing test coverage by 35%</p>
                     </div>
                 </div>
                 
+                <!-- PROJECT 2 - UPDATE WITH YOUR PROJECT DETAILS -->
                 <div class="project-card">
                     <div class="project-info">
                         <h3 class="project-title">System Integration Test Suite for Medical Devices</h3>
                         <p>Developed a comprehensive validation system for medical device software, ensuring compliance with regulatory requirements and validating critical safety features.</p>
+                        <!-- UPDATE TECH TAGS WITH RELEVANT TECHNOLOGIES -->
                         <div class="project-tech">
                             <span class="tech-tag">Java</span>
                             <span class="tech-tag">JUnit</span>
                             <span class="tech-tag">Jenkins</span>
                             <span class="tech-tag">FDA Compliance</span>
                         </div>
+                        <!-- UPDATE ACHIEVEMENT METRICS -->
                         <p class="project-achievements">Successfully validated 5 medical devices for FDA submission</p>
                     </div>
                 </div>
                 
+                <!-- PROJECT 3 - UPDATE WITH YOUR PROJECT DETAILS -->
                 <div class="project-card">
                     <div class="project-info">
                         <h3 class="project-title">Performance Testing Framework</h3>
                         <p>Created a scalable performance testing framework for industrial control systems, capable of simulating thousands of simultaneous data points and system events.</p>
+                        <!-- UPDATE TECH TAGS WITH RELEVANT TECHNOLOGIES -->
                         <div class="project-tech">
                             <span class="tech-tag">JMeter</span>
                             <span class="tech-tag">Grafana</span>
                             <span class="tech-tag">InfluxDB</span>
                             <span class="tech-tag">Bash</span>
                         </div>
+                        <!-- UPDATE ACHIEVEMENT METRICS -->
                         <p class="project-achievements">Identified performance bottlenecks that improved system throughput by 40%</p>
                     </div>
                 </div>
                 
+                <!-- PROJECT 4 - UPDATE WITH YOUR PROJECT DETAILS -->
                 <div class="project-card">
                     <div class="project-info">
                         <h3 class="project-title">Hardware-in-the-Loop Test Environment</h3>
                         <p>Designed and implemented a hardware-in-the-loop testing environment for automotive control systems, enabling automated validation of firmware updates and system responses.</p>
+                        <!-- UPDATE TECH TAGS WITH RELEVANT TECHNOLOGIES -->
                         <div class="project-tech">
                             <span class="tech-tag">LabVIEW</span>
                             <span class="tech-tag">CAN Bus</span>
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">C++</span>
                         </div>
+                        <!-- UPDATE ACHIEVEMENT METRICS -->
                         <p class="project-achievements">Reduced validation cycle time from weeks to days</p>
                     </div>
                 </div>
+                
+                <!-- TO ADD MORE PROJECTS, COPY THE PROJECT-CARD DIV STRUCTURE ABOVE -->
             </div>
             
+            <!-- INSPIRATIONAL QUOTE - CHANGE THIS TO YOUR PREFERRED QUOTE -->
             <div class="star-wars-quote-container">
                 <p class="star-wars-quote">"The ability to destroy a planet is insignificant next to the power of thorough testing."</p>
             </div>
         </section>
     </main>
 
+    <!-- FOOTER SECTION - EDIT COPYRIGHT INFORMATION AND YEAR -->
     <footer>
         <p>&copy; 2025 Harsh Mittal. All Rights Reserved. <span class="sw-footer">May the Force be with your code.</span></p>
     </footer>
 
+    <!-- JAVASCRIPT FILE - HANDLES ANIMATIONS AND INTERACTIVITY -->
     <script src="js/main.js"></script>
 </body>
 </html>

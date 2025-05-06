@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- META INFORMATION AND PAGE SETUP -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- EDIT TITLE TAG TO UPDATE BROWSER TAB DISPLAY -->
     <title>Contact | Harsh Mittal</title>
+    <!-- STYLESHEET AND FAVICON LINKS -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Star Wars starry background -->
+    <!-- STAR WARS STARRY BACKGROUND EFFECT - DON'T MODIFY -->
     <div class="stars"></div>
     
+    <!-- NAVIGATION SECTION - EDIT LINKS IF ADDING NEW PAGES -->
     <header>
         <button class="menu-toggle" aria-label="Toggle navigation menu">☰</button>
         <nav>
@@ -19,24 +23,31 @@
             <a href="about.html">About</a>
             <a href="projects.html">Projects</a>
             <a href="contact.html" class="active">Contact</a>
+            <!-- ADD NEW NAVIGATION LINKS HERE IF NEEDED -->
         </nav>
     </header>
 
     <main>
         <section id="contact" class="fade-in">
+            <!-- SECTION TITLE - CUSTOMIZE THIS HEADING -->
             <div class="section-title-container">
                 <h2>Establish Communication</h2>
                 <div class="lightsaber" style="width: 70px;"></div>
             </div>
             
             <div class="contact-grid">
+                <!-- CONTACT INFORMATION SECTION -->
                 <div class="contact-info">
+                    <!-- INTRODUCTION TEXT - EDIT THIS TO CUSTOMIZE YOUR MESSAGE -->
                     <div class="contact-intro">
                         <p>Interested in collaborating on a project or discussing how I can contribute to your team? Feel free to reach out through any of the following channels, and I'll respond as soon as possible.</p>
+                        <!-- STAR WARS THEMED QUOTE - CHANGE TO YOUR PREFERENCE -->
                         <p class="star-wars-quote">"Help me connect with you. You're my only hope."</p>
                     </div>
                     
+                    <!-- CONTACT METHODS - UPDATE WITH YOUR ACTUAL CONTACT INFORMATION -->
                     <div class="contact-methods">
+                        <!-- EMAIL CONTACT - UPDATE WITH YOUR EMAIL -->
                         <div class="contact-item">
                             <div class="contact-icon">
                                 <i class="fas fa-envelope"></i>
@@ -47,6 +58,7 @@
                             </div>
                         </div>
                         
+                        <!-- PHONE CONTACT - UPDATE WITH YOUR PHONE NUMBER -->
                         <div class="contact-item">
                             <div class="contact-icon">
                                 <i class="fas fa-phone"></i>
@@ -57,6 +69,7 @@
                             </div>
                         </div>
                         
+                        <!-- LINKEDIN CONTACT - UPDATE WITH YOUR LINKEDIN URL -->
                         <div class="contact-item">
                             <div class="contact-icon">
                                 <i class="fab fa-linkedin"></i>
@@ -67,6 +80,7 @@
                             </div>
                         </div>
                         
+                        <!-- GITHUB CONTACT - UPDATE WITH YOUR GITHUB URL -->
                         <div class="contact-item">
                             <div class="contact-icon">
                                 <i class="fab fa-github"></i>
@@ -76,32 +90,41 @@
                                 <p><a href="https://github.com/harshmittal" target="_blank">github.com/harshmittal</a></p>
                             </div>
                         </div>
+                        
+                        <!-- ADD MORE CONTACT METHODS BY COPYING THE CONTACT-ITEM DIV STRUCTURE ABOVE -->
                     </div>
                 </div>
                 
+                <!-- CONTACT FORM SECTION - REQUIRES BACKEND PROCESSING TO WORK -->
                 <div class="contact-form">
                     <h3>Send Transmission</h3>
+                    <!-- CONTACT FORM - REQUIRES BACKEND/JS TO PROCESS FORM SUBMISSION -->
                     <form id="contactForm">
+                        <!-- NAME FIELD -->
                         <div class="form-group">
                             <label for="name" class="form-label">Your Name</label>
                             <input type="text" id="name" name="name" class="form-input" required>
                         </div>
                         
+                        <!-- EMAIL FIELD -->
                         <div class="form-group">
                             <label for="email" class="form-label">Your Email</label>
                             <input type="email" id="email" name="email" class="form-input" required>
                         </div>
                         
+                        <!-- SUBJECT FIELD -->
                         <div class="form-group">
                             <label for="subject" class="form-label">Subject</label>
                             <input type="text" id="subject" name="subject" class="form-input" required>
                         </div>
                         
+                        <!-- MESSAGE FIELD -->
                         <div class="form-group">
                             <label for="message" class="form-label">Message</label>
                             <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
                         </div>
                         
+                        <!-- SUBMIT BUTTON -->
                         <button type="submit" class="btn primary-btn">
                             <i class="fas fa-paper-plane"></i> Transmit Message
                         </button>
@@ -109,12 +132,14 @@
                 </div>
             </div>
             
+            <!-- LOCATION MAP SECTION - UPDATE IFRAME SRC WITH YOUR LOCATION -->
             <div class="location-container">
                 <div class="section-title-container">
                     <h3>Current Base Location</h3>
                     <div class="lightsaber red" style="width: 50px;"></div>
                 </div>
                 <div class="location-map">
+                    <!-- UPDATE THIS IFRAME WITH YOUR ACTUAL LOCATION ON GOOGLE MAPS -->
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00658368400567!3d40.71277447933185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a23e28c1191%3A0x49f75d3b79a1988!2sTech%20Hub%20NYC!5e0!3m2!1sen!2sus!4v1652396887754!5m2!1sen!2sus" 
                             width="100%" height="300" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
@@ -122,10 +147,12 @@
         </section>
     </main>
 
+    <!-- FOOTER SECTION - EDIT COPYRIGHT INFORMATION AND YEAR -->
     <footer>
         <p>&copy; 2025 Harsh Mittal. All Rights Reserved. <span class="sw-footer">May the Force be with your code.</span></p>
     </footer>
 
+    <!-- JAVASCRIPT FILE - HANDLES ANIMATIONS AND INTERACTIVITY -->
     <script src="js/main.js"></script>
 </body>
 </html>
