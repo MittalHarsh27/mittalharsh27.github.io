@@ -9,19 +9,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <!-- Star Wars starry background -->
+    <div class="stars"></div>
+    
     <header>
         <button class="menu-toggle" aria-label="Toggle navigation menu">☰</button>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
-            <a href="projects.html">Projects</a>
+            <a href="projects.html" class="active">Projects</a>
             <a href="contact.html">Contact</a>
         </nav>
     </header>
 
     <main>
         <section id="experience" class="fade-in">
-            <h2>Professional Experience</h2>
+            <div class="section-title-container">
+                <h2>Career Journey</h2>
+                <div class="lightsaber" style="width: 80px;"></div>
+            </div>
             
             <div class="timeline">
                 <div class="timeline-item">
@@ -63,7 +69,10 @@
         </section>
 
         <section id="projects" class="fade-in">
-            <h2>Featured Projects</h2>
+            <div class="section-title-container">
+                <h2>Notable Missions</h2>
+                <div class="lightsaber red" style="width: 80px;"></div>
+            </div>
             
             <div class="project-grid">
                 <div class="project-card">
@@ -122,11 +131,15 @@
                     </div>
                 </div>
             </div>
+            
+            <div class="star-wars-quote-container">
+                <p class="star-wars-quote">"The ability to destroy a planet is insignificant next to the power of thorough testing."</p>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Harsh Mittal. All Rights Reserved.</p>
+        <p>&copy; 2025 Harsh Mittal. All Rights Reserved. <span class="sw-footer">May the Force be with your code.</span></p>
     </footer>
 
     <script src="js/main.js"></script>

@@ -9,73 +9,86 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <!-- Star Wars starry background -->
+    <div class="stars"></div>
+    
     <header>
         <button class="menu-toggle" aria-label="Toggle navigation menu">☰</button>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="projects.html">Projects</a>
-            <a href="contact.html">Contact</a>
+            <a href="contact.html" class="active">Contact</a>
         </nav>
     </header>
 
     <main>
         <section id="contact" class="fade-in">
-            <h2>Get In Touch</h2>
+            <div class="section-title-container">
+                <h2>Establish Communication</h2>
+                <div class="lightsaber" style="width: 70px;"></div>
+            </div>
             
             <div class="contact-grid">
                 <div class="contact-info">
                     <div class="contact-intro">
-                        <h3>Let's Connect</h3>
-                        <p>I'm always open to discussing new projects, opportunities, or partnerships. Whether you have a question about system testing, integration, or just want to say hello, I'll try my best to get back to you as soon as possible.</p>
+                        <p>Interested in collaborating on a project or discussing how I can contribute to your team? Feel free to reach out through any of the following channels, and I'll respond as soon as possible.</p>
+                        <p class="star-wars-quote">"Help me connect with you. You're my only hope."</p>
                     </div>
                     
                     <div class="contact-methods">
                         <div class="contact-item">
-                            <i class="fas fa-envelope contact-icon"></i>
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
                             <div>
                                 <h4>Email</h4>
-                                <p><a href="mailto:harsh.mittal@example.com">harsh.mittal@example.com</a></p>
+                                <p>harsh.mittal@example.com</p>
                             </div>
                         </div>
                         
                         <div class="contact-item">
-                            <i class="fab fa-linkedin contact-icon"></i>
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
                             <div>
                                 <h4>LinkedIn</h4>
-                                <p><a href="https://linkedin.com/in/harsh-mittal" target="_blank">linkedin.com/in/harsh-mittal</a></p>
+                                <p><a href="https://www.linkedin.com/in/harshmittal" target="_blank">linkedin.com/in/harshmittal</a></p>
                             </div>
                         </div>
                         
                         <div class="contact-item">
-                            <i class="fab fa-github contact-icon"></i>
+                            <div class="contact-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
                             <div>
                                 <h4>GitHub</h4>
-                                <p><a href="https://github.com/harsh-mittal" target="_blank">github.com/harsh-mittal</a></p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt contact-icon"></i>
-                            <div>
-                                <h4>Location</h4>
-                                <p>Based in San Francisco, California</p>
-                                <p>Available for remote work worldwide</p>
+                                <p><a href="https://github.com/harshmittal" target="_blank">github.com/harshmittal</a></p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="contact-form">
-                    <h3>Send Me a Message</h3>
-                    <form action="https://formspree.io/f/your-form-id" method="POST">
+                    <h3>Send Transmission</h3>
+                    <form id="contactForm">
                         <div class="form-group">
-                            <label for="name" class="form-label">Name</label>
+                            <label for="name" class="form-label">Your Name</label>
                             <input type="text" id="name" name="name" class="form-input" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="email" class="form-label">Email</label>
+                            <label for="email" class="form-label">Your Email</label>
                             <input type="email" id="email" name="email" class="form-input" required>
                         </div>
                         
@@ -86,18 +99,31 @@
                         
                         <div class="form-group">
                             <label for="message" class="form-label">Message</label>
-                            <textarea id="message" name="message" rows="5" class="form-textarea" required></textarea>
+                            <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
                         </div>
                         
-                        <button type="submit" class="btn primary-btn">Send Message</button>
+                        <button type="submit" class="btn primary-btn">
+                            <i class="fas fa-paper-plane"></i> Transmit Message
+                        </button>
                     </form>
+                </div>
+            </div>
+            
+            <div class="location-container">
+                <div class="section-title-container">
+                    <h3>Current Base Location</h3>
+                    <div class="lightsaber red" style="width: 50px;"></div>
+                </div>
+                <div class="location-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00658368400567!3d40.71277447933185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a23e28c1191%3A0x49f75d3b79a1988!2sTech%20Hub%20NYC!5e0!3m2!1sen!2sus!4v1652396887754!5m2!1sen!2sus" 
+                            width="100%" height="300" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Harsh Mittal. All Rights Reserved.</p>
+        <p>&copy; 2025 Harsh Mittal. All Rights Reserved. <span class="sw-footer">May the Force be with your code.</span></p>
     </footer>
 
     <script src="js/main.js"></script>

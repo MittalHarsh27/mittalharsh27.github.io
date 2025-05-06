@@ -1,168 +1,253 @@
 // Main JavaScript for Harsh Mittal's Portfolio
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Navigation Menu Toggle
+// Mobile Navigation Toggle
+document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('nav');
     
-    if (menuToggle && nav) {
-        menuToggle.addEventListener('click', () => {
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
             nav.classList.toggle('active');
         });
     }
     
-    // Close mobile nav when clicking outside
-    document.addEventListener('click', (e) => {
-        if (nav && nav.classList.contains('active') && !nav.contains(e.target) && e.target !== menuToggle) {
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('nav') && !e.target.closest('.menu-toggle') && nav.classList.contains('active')) {
             nav.classList.remove('active');
         }
     });
-    
-    // Fade-in animations for sections
-    const observerOptions = {
-        threshold: 0.2,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
+
+    // Fade in animations for sections
     const fadeElements = document.querySelectorAll('.fade-in');
     
-    if ('IntersectionObserver' in window && fadeElements.length > 0) {
-        const observer = new IntersectionObserver((entries) => {
+    const fadeInObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animation = 'fadeIn 1s forwards';
+                fadeInObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+    
+    fadeElements.forEach(element => {
+        fadeInObserver.observe(element);
+    });
+
+    // Lightsaber animation
+    const lightsabers = document.querySelectorAll('.lightsaber');
+    
+    lightsabers.forEach(saber => {
+        saber.style.width = '0';
+        
+        const saberObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                    observer.unobserve(entry.target);
+                    setTimeout(() => {
+                        saber.style.transition = 'width 1s ease-in-out';
+                        saber.style.width = saber.dataset.width || '100%';
+                    }, 300);
+                    saberObserver.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
-        
-        fadeElements.forEach(element => {
-            // Set initial state
-            element.style.opacity = 0;
-            element.style.transform = 'translateY(20px)';
-            element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-            observer.observe(element);
+        }, {
+            threshold: 0.1
         });
-    } else {
-        // Fallback for browsers that don't support Intersection Observer
-        fadeElements.forEach(element => {
-            element.style.opacity = 1;
-            element.style.transform = 'translateY(0)';
+        
+        saberObserver.observe(saber);
+    });
+
+    // Typing effect for tagline
+    const tagline = document.querySelector('.tagline');
+    if (tagline) {
+        const text = tagline.textContent;
+        tagline.textContent = '';
+        let i = 0;
+        
+        function typeWriter() {
+            if (i < text.length) {
+                tagline.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+        
+        setTimeout(typeWriter, 1000);
+    }
+
+    // Star Wars quote hover effect
+    const quotes = document.querySelectorAll('.star-wars-quote');
+    
+    quotes.forEach(quote => {
+        quote.addEventListener('mouseenter', () => {
+            quote.style.color = 'var(--primary-color)';
+            quote.style.textShadow = '0 0 8px var(--primary-color)';
+        });
+        
+        quote.addEventListener('mouseleave', () => {
+            quote.style.color = '';
+            quote.style.textShadow = '';
+        });
+    });
+
+    // Form submission with lightspeed effect
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Visual feedback
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Transmitting...';
+            
+            // Simulate form submission delay
+            setTimeout(() => {
+                // Add lightspeed effect to the form
+                const form = document.querySelector('.contact-form');
+                form.style.transition = 'transform 1s, opacity 1s';
+                form.style.transform = 'translateX(100px)';
+                form.style.opacity = '0';
+                
+                // Show success message after animation
+                setTimeout(() => {
+                    form.innerHTML = `
+                        <div class="submission-success">
+                            <i class="fas fa-check-circle" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+                            <h3>Transmission Received!</h3>
+                            <p>Thank you for your message. I will respond to your communication shortly.</p>
+                            <p class="star-wars-quote">The Force is strong with this one.</p>
+                        </div>
+                    `;
+                    form.style.transform = 'translateX(0)';
+                    form.style.opacity = '1';
+                }, 1000);
+            }, 1500);
         });
     }
+
+    // Create stars dynamically for better effect
+    function createStars() {
+        const starsContainer = document.querySelector('.stars');
+        if (!starsContainer) return;
+        
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            
+            // Random position
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+            
+            // Random size
+            const size = Math.random() * 2;
+            
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.left = `${x}px`;
+            star.style.top = `${y}px`;
+            
+            // Random twinkle delay
+            star.style.animationDelay = `${Math.random() * 5}s`;
+            
+            starsContainer.appendChild(star);
+        }
+    }
     
-    // Animated typing effect for the home page
-    const animateTypingEffect = () => {
-        const homeSection = document.getElementById('home');
-        if (!homeSection) return;
-        
-        const tagline = homeSection.querySelector('.tagline');
-        if (!tagline) return;
-        
-        const originalText = tagline.textContent;
-        tagline.textContent = '';
-        
-        let i = 0;
-        const typeChar = () => {
-            if (i < originalText.length) {
-                tagline.textContent += originalText.charAt(i);
-                i++;
-                setTimeout(typeChar, 100);
+    // Add additional styles for stars
+    function addStarStyles() {
+        const style = document.createElement('style');
+        style.textContent = `
+            .star {
+                position: absolute;
+                background-color: #FFFFFF;
+                border-radius: 50%;
+                animation: twinkle 4s infinite alternate;
             }
-        };
+            
+            @keyframes twinkle {
+                0% { opacity: 0.3; }
+                50% { opacity: 1; }
+                100% { opacity: 0.3; }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    addStarStyles();
+    createStars();
+
+    // Parallax effect for the stars
+    window.addEventListener('mousemove', (e) => {
+        const stars = document.querySelectorAll('.star');
+        const mouseX = e.clientX / window.innerWidth;
+        const mouseY = e.clientY / window.innerHeight;
         
-        setTimeout(typeChar, 1000);
-    };
+        stars.forEach((star, index) => {
+            const depth = index % 5 + 1;
+            const moveX = (mouseX * depth) * 2;
+            const moveY = (mouseY * depth) * 2;
+            
+            star.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        });
+    });
+});
+
+// Easter egg: Konami code to trigger lightsaber sound
+(function() {
+    const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+    let konamiIndex = 0;
     
-    // Initial call for typing effect
-    animateTypingEffect();
-    
-    // Add active class to current page in navigation
-    const currentPage = window.location.pathname.split('/').pop();
-    const navLinks = document.querySelectorAll('nav a');
-    
-    navLinks.forEach(link => {
-        const linkPage = link.getAttribute('href');
-        if ((currentPage === '' && linkPage === 'index.html') || linkPage === currentPage) {
-            link.classList.add('active');
+    document.addEventListener('keydown', function(e) {
+        if (e.key === konamiCode[konamiIndex]) {
+            konamiIndex++;
+            
+            if (konamiIndex === konamiCode.length) {
+                // Konami code completed!
+                activateLightsaberMode();
+                konamiIndex = 0;
+            }
+        } else {
+            konamiIndex = 0;
         }
     });
     
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (!targetElement) return;
-            
-            window.scrollTo({
-                top: targetElement.offsetTop - 80, // Offset for header
-                behavior: 'smooth'
-            });
-        });
-    });
-    
-    // Add hover effects to project cards
-    const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            card.style.transform = 'translateY(-10px)';
-            card.style.boxShadow = '0 15px 30px rgba(0,0,0,0.2)';
-        });
+    function activateLightsaberMode() {
+        // Create lightsaber sound
+        const saberSound = new Audio('https://www.soundjay.com/free-sound-effects-1.html'); // Replace with actual lightsaber sound URL
+        saberSound.play();
         
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'translateY(0)';
-            card.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
-        });
-    });
-    
-    // Form validation for the contact form
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            const nameInput = document.getElementById('name');
-            const emailInput = document.getElementById('email');
-            const messageInput = document.getElementById('message');
-            
-            let isValid = true;
-            
-            if (nameInput && nameInput.value.trim() === '') {
-                isValid = false;
-                highlightInvalidField(nameInput);
-            }
-            
-            if (emailInput) {
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(emailInput.value)) {
-                    isValid = false;
-                    highlightInvalidField(emailInput);
-                }
-            }
-            
-            if (messageInput && messageInput.value.trim() === '') {
-                isValid = false;
-                highlightInvalidField(messageInput);
-            }
-            
-            if (!isValid) {
-                e.preventDefault();
-            }
-        });
-    }
-    
-    function highlightInvalidField(field) {
-        field.style.borderColor = '#ff6b6b';
-        field.style.boxShadow = '0 0 0 2px rgba(255, 107, 107, 0.2)';
+        // Visual effect
+        document.body.style.transition = 'box-shadow 0.5s';
+        document.body.style.boxShadow = 'inset 0 0 100px var(--secondary-color)';
         
-        field.addEventListener('input', function removeHighlight() {
-            this.style.borderColor = '';
-            this.style.boxShadow = '';
-            this.removeEventListener('input', removeHighlight);
-        });
+        setTimeout(() => {
+            document.body.style.boxShadow = 'none';
+        }, 1000);
+        
+        // Show message
+        const message = document.createElement('div');
+        message.textContent = 'The Force is now with you!';
+        message.style.position = 'fixed';
+        message.style.bottom = '20px';
+        message.style.right = '20px';
+        message.style.background = 'rgba(0, 0, 0, 0.8)';
+        message.style.color = 'var(--primary-color)';
+        message.style.padding = '10px 20px';
+        message.style.borderRadius = '4px';
+        message.style.fontFamily = "'Pathway Gothic One', sans-serif";
+        message.style.zIndex = '9999';
+        
+        document.body.appendChild(message);
+        
+        setTimeout(() => {
+            message.style.transition = 'opacity 1s';
+            message.style.opacity = '0';
+            setTimeout(() => {
+                document.body.removeChild(message);
+            }, 1000);
+        }, 3000);
     }
-});
+})();

@@ -9,11 +9,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <!-- Star Wars starry background -->
+    <div class="stars"></div>
+    
     <header>
         <button class="menu-toggle" aria-label="Toggle navigation menu">☰</button>
         <nav>
             <a href="index.html">Home</a>
-            <a href="about.html">About</a>
+            <a href="about.html" class="active">About</a>
             <a href="projects.html">Projects</a>
             <a href="contact.html">Contact</a>
         </nav>
@@ -21,98 +24,116 @@
 
     <main>
         <section id="about" class="fade-in">
-            <h2>About Me</h2>
+            <div class="section-title-container">
+                <h2>The Engineer's Tale</h2>
+                <div class="lightsaber" style="width: 60px;"></div>
+            </div>
             
             <div class="about-content">
                 <div class="about-image">
-                    <img src="assets/profile.jpg" alt="Harsh Mittal" class="profile-img" onerror="this.src='https://via.placeholder.com/400x500?text=Harsh+Mittal'">
+                    <div class="profile-frame">
+                        <img src="https://via.placeholder.com/400x500" alt="Harsh Mittal" class="profile-img">
+                        <div class="profile-lightsaber"></div>
+                    </div>
+                    <p class="profile-quote">"In my experience, there's no such thing as luck in testing."</p>
                 </div>
                 
-                <div class="about-text">
-                    <p>Hello! I'm Harsh Mittal, a dedicated <strong>System Test and Integration Engineer</strong> with a passion for ensuring technical excellence and reliability in complex systems.</p>
-                    
-                    <p>With extensive experience in test automation, system integration, and quality assurance, I specialize in bridging the gap between hardware and software components to ensure seamless functionality across entire systems. My methodical approach to testing has helped identify critical issues early in development cycles, saving time and resources.</p>
-                    
-                    <p>Throughout my career, I've worked across various domains including IoT, medical devices, and industrial control systems. I take pride in my ability to understand complex technical requirements and translate them into comprehensive test strategies that validate both functionality and performance.</p>
-                    
-                    <p>What drives me is the satisfaction of knowing that my work directly contributes to the quality, safety, and reliability of products that users depend on every day. I'm constantly learning and adapting to new technologies and methodologies to stay at the forefront of testing practices.</p>
+                <div class="about-details">
+                    <div class="about-bio">
+                        <p>I am a dedicated System Test and Integration Engineer with over 5 years of experience in ensuring the quality and reliability of complex technological systems. My journey in the tech universe began with a fascination for understanding how systems work together and ensuring they perform flawlessly.</p>
+                        
+                        <p>With expertise in test automation, system validation, and cross-functional collaboration, I've successfully led testing initiatives that have improved product quality, reduced development cycles, and ensured seamless integration of hardware and software components.</p>
+                        
+                        <p>When not troubleshooting systems or creating test frameworks, I enjoy exploring new technologies, contributing to open source projects, and staying updated with the latest industry trends.</p>
+                    </div>
                     
                     <div class="skills-container">
-                        <h3>Technical Skills</h3>
-                        
                         <div class="skill-category">
-                            <h4>Testing Expertise</h4>
+                            <h4><i class="fas fa-jedi"></i> Testing Expertise</h4>
                             <div class="skill-list">
                                 <span class="skill-tag">System Integration Testing</span>
-                                <span class="skill-tag">Hardware Testing</span>
-                                <span class="skill-tag">Automated Testing</span>
+                                <span class="skill-tag">Test Automation</span>
                                 <span class="skill-tag">Performance Testing</span>
-                                <span class="skill-tag">Regression Testing</span>
-                                <span class="skill-tag">User Acceptance Testing</span>
-                                <span class="skill-tag">Test Case Design</span>
+                                <span class="skill-tag">Hardware/Software Validation</span>
+                                <span class="skill-tag">Continuous Integration</span>
                                 <span class="skill-tag">Test Planning</span>
+                                <span class="skill-tag">Requirements Analysis</span>
                             </div>
                         </div>
                         
                         <div class="skill-category">
-                            <h4>Tools & Technologies</h4>
+                            <h4><i class="fas fa-robot"></i> Tools & Technologies</h4>
                             <div class="skill-list">
                                 <span class="skill-tag">Selenium</span>
-                                <span class="skill-tag">JUnit</span>
-                                <span class="skill-tag">PyTest</span>
-                                <span class="skill-tag">Jenkins</span>
-                                <span class="skill-tag">JIRA</span>
-                                <span class="skill-tag">Git</span>
-                                <span class="skill-tag">Docker</span>
                                 <span class="skill-tag">JMeter</span>
-                                <span class="skill-tag">Grafana</span>
-                                <span class="skill-tag">LabVIEW</span>
-                                <span class="skill-tag">CAN Bus</span>
-                                <span class="skill-tag">MQTT</span>
+                                <span class="skill-tag">Jenkins</span>
+                                <span class="skill-tag">Docker</span>
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">JIRA</span>
+                                <span class="skill-tag">TestRail</span>
+                                <span class="skill-tag">Postman</span>
                             </div>
                         </div>
                         
                         <div class="skill-category">
-                            <h4>Programming Languages</h4>
+                            <h4><i class="fas fa-code"></i> Programming Languages</h4>
                             <div class="skill-list">
                                 <span class="skill-tag">Python</span>
                                 <span class="skill-tag">Java</span>
-                                <span class="skill-tag">C++</span>
                                 <span class="skill-tag">JavaScript</span>
-                                <span class="skill-tag">Bash</span>
                                 <span class="skill-tag">SQL</span>
+                                <span class="skill-tag">Bash</span>
+                                <span class="skill-tag">C++</span>
                             </div>
                         </div>
                     </div>
                     
                     <div class="education">
-                        <h3>Education</h3>
+                        <div class="section-title-container">
+                            <h3>Jedi Training</h3>
+                            <div class="lightsaber" style="width: 40px;"></div>
+                        </div>
                         
                         <div class="education-item">
-                            <h4>Bachelor of Technology in Electronics Engineering</h4>
-                            <p class="edu-institution">Technical University</p>
-                            <p class="edu-year">2015 - 2019</p>
-                            <p>Specialized in embedded systems and control engineering. Graduated with honors and completed a senior project on automated testing frameworks for IoT devices.</p>
+                            <h4>Master of Science in Computer Engineering</h4>
+                            <p class="edu-institution">Galactic Tech University</p>
+                            <p class="edu-year">2017 - 2019</p>
+                            <p>Specialized in Embedded Systems and Testing Methodologies</p>
+                        </div>
+                        
+                        <div class="education-item">
+                            <h4>Bachelor of Engineering in Electronics</h4>
+                            <p class="edu-institution">Republic Engineering Academy</p>
+                            <p class="edu-year">2013 - 2017</p>
+                            <p>Graduated with Honors</p>
                         </div>
                     </div>
                     
                     <div class="certifications">
-                        <h3>Certifications</h3>
+                        <div class="section-title-container">
+                            <h3>Holocron Knowledge</h3>
+                            <div class="lightsaber red" style="width: 40px;"></div>
+                        </div>
                         
                         <div class="cert-list">
                             <div class="cert-item">
-                                <h4>ISTQB Certified Tester - Advanced Level</h4>
+                                <h4>Certified Software Test Engineer (CSTE)</h4>
                                 <p class="cert-year">2022</p>
                             </div>
                             
                             <div class="cert-item">
-                                <h4>Certified Automation Professional (ISA)</h4>
+                                <h4>AWS Certified DevOps Engineer</h4>
                                 <p class="cert-year">2021</p>
                             </div>
                             
                             <div class="cert-item">
-                                <h4>AWS Certified Developer - Associate</h4>
+                                <h4>Selenium Automation Professional</h4>
                                 <p class="cert-year">2020</p>
+                            </div>
+                            
+                            <div class="cert-item">
+                                <h4>Certified Scrum Master</h4>
+                                <p class="cert-year">2019</p>
                             </div>
                         </div>
                     </div>
@@ -122,7 +143,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Harsh Mittal. All Rights Reserved.</p>
+        <p>&copy; 2025 Harsh Mittal. All Rights Reserved. <span class="sw-footer">May the Force be with your code.</span></p>
     </footer>
 
     <script src="js/main.js"></script>
